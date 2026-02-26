@@ -1,0 +1,39 @@
+/* section -->      Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* endsection -->   Imports */
+
+
+/* section -->      Globals */
+* {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+*{
+    padding: .25 rem;
+}
+
+body{
+    background-color: #2f2e2b;
+    color:#f3f3f3;
+    height: 100 vh;
+    width: 100 vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+/* endsection -->   Globals */
+
+/* section -->       */
+/* endsection -->    */
+
+/* section -->       */
+/* endsection -->    */
+
+/* section -->       */
+/* endsection -->    */

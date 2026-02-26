@@ -1,11 +1,14 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+
 from models import SensorData
 
 app = FastAPI()
 
 templates = Jinja2Templates(directory = "templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 def read_root():
@@ -22,6 +25,7 @@ def read_root():
 
 @app.get("/home", response_class=HTMLResponse)
 def home(
+    request: Request
 ):
     # data_dict = {
     #     "engine_rpm": engine_rpm,
@@ -34,7 +38,7 @@ def home(
     # }
     data_dict = {}
      
-    return templates.TemplateResponse("index.html")
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.get("/prediction")
 def home(data = SensorData):
