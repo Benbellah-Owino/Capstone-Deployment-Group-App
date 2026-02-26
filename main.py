@@ -1,9 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from models import SensorData
 
 app = FastAPI()
+
+templates = Jinja2Templates(directory = "templates")
 
 @app.get("/")
 def read_root():
@@ -19,22 +21,46 @@ def read_root():
     # engine_condition : bool
 
 @app.get("/home", response_class=HTMLResponse)
-def home():
-    return """
-    <html>
-        <head>
-            <title>Engine Condition Predictor</title>
-        </head>
-        <body>
-            <h1>Engine Condition Predictor🚀</h1>
-                <p>
-                    Hello. Welcome to this app where you enter your engine sensor data from
-                    your infotainment and we try to predict it.  
-                <p/>
-        </body>
-    </html>
-"""
+def home(
+):
+    # data_dict = {
+    #     "engine_rpm": engine_rpm,
+    #     "lub_oil_pressure": lub_oil_pressure,
+    #     "fuel_pressure": fuel_pressure,
+    #     "coolant_pressure": coolant_pressure,
+    #     "lub_oil_temp": lub_oil_temp,
+    #     "coolant_temp": coolant_temp,
+    #     "engine_condition": engine_condition
+    # }
+    data_dict = {}
+     
+    return templates.TemplateResponse("index.html")
 
-@app.post("/predict")
-def predict(data: SensorData):
-    return {"payload":data}
+@app.get("/prediction")
+def home(data = SensorData):
+    
+    return templates.TemplateResponse("index.html", {"Data": data})
+
+
+@app.post("/predict", response_class=HTMLResponse)
+def predict(
+    request: Request,
+    engine_rpm       : int = Form(...),
+    lub_oil_pressure : float = Form(...),
+    fuel_pressure    : float = Form(...),
+    coolant_pressure : float = Form(...),
+    lub_oil_temp     : float = Form(...),
+    coolant_temp     : float = Form(...),
+    engine_condition : bool = Form(...),
+):
+    data_dict = {
+        "engine_rpm": engine_rpm,
+        "lub_oil_pressure": lub_oil_pressure,
+        "fuel_pressure": fuel_pressure,
+        "coolant_pressure": coolant_pressure,
+        "lub_oil_temp": lub_oil_temp,
+        "coolant_temp": coolant_temp,
+        "engine_condition": engine_condition
+    }
+     
+    return templates.TemplateResponse("prediction.html", {"request": request,"data": data_dict})

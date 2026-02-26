@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prediction</h1>
+    <ul class="features">
+        <li class="feature"><b>Engine RPM</b>:{{data.engine_rpm}}</li>
+        <li class="feature"><b>Lubricating Oil Pressure</b>:{{data.lub_oil_pressure}}</li>
+        <li class="feature"><b>Fuel Pressure</b>:{{data.fuel_pressure}}</li>
+        <li class="feature"><b>Coolant Pressure</b>:{{data.coolant_pressure}}</li>
+        <li class="feature"><b>Lubricating Oil Temperature</b>:{{data.lub_oil_pressure}}</li>
+        <li class="feature"><b>Coolant Temperature</b>:{{coolant_temp}}</li>
+    </ul>
+    <h3 class="prediction"><B>Prediction: {{data.engine_condition}}</B></h3>
+</body>
+</html>

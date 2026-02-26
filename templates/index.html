@@ -3,13 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engine Condition Predictor</title>
+    <title>Engine Condition Predictor 2</title>
 </head>
 <body>
             <center><h1>Engine Condition Predictor🚀</h1></center>
                 <p>
                     Hello. Welcome to this app where you enter your engine sensor data from
                     your infotainment and we try to predict it.  
+                    
                 <p/>
+
+                <form action="/predict" method="post">
+                    <div class="form_in_div">
+                        <label for="engine_rpm">Engine RPM</label>
+                        <input type="text" name="engine_rpm" id="engine_rpm">
+                    </div>
+
+                    <div class="form_in_div">
+                        <label for="lub_oil_pressure">Lubricating Oil Pressure</label>
+                        <input type="text" name="lub_oil_pressure" id="lub_oil_pressure">
+                    </div>
+
+                    <div class="form_in_div">
+                        <label for="fuel_pressure">Fuel Pressure</label>
+                        <input type="text" name="fuel_pressure" id="fuel_pressure">
+                    </div>
+
+                    <div class="form_in_div">
+                        <label for="coolant_pressure">Coolant Pressure</label>
+                        <input type="text" name="coolant_pressure" id="coolant_pressure">
+                    </div>
+
+                    <div class="form_in_div">
+                        <label for="lub_oil_temp">Lubricating oil temperature</label>
+                        <input type="text" name="lub_oil_temp" id="lub_oil_temp">
+                    </div>
+
+                    <div class="form_in_div">
+                        <label for="coolant_temp">Coolant temperature</label>
+                        <input type="text" name="coolant_temp" id="coolant_temp">
+                    </div>
+
+                    <div class="form_in_div">
+                        <label for="engine_condition">Engine Condition</label>
+                        <input type="text" name="engine_condition" id="engine_condition">
+                    </div>
+                    <button type="submit" class="predict_btn" id="predict_btn">PREDICT</button>
+                </form>
 </body>
 </html>
