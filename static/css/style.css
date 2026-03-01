@@ -1,39 +1,99 @@
 /* section -->      Imports */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
 /* endsection -->   Imports */
 
 
 /* section -->      Globals */
 * {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: normal; */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
 }
 
-*{
+.roboto-body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+* {
     padding: .25 rem;
 }
 
-body{
+body {
     background-color: #2f2e2b;
-    color:#f3f3f3;
-    height: 100 vh;
-    width: 100 vw;
+    color: #f3f3f3;
+    height: 100vh;
+    width: 100vw;
+    font-weight: normal;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
+
 /* endsection -->   Globals */
 
-/* section -->       */
-/* endsection -->    */
+/* section      -->*/
+/* endsection   -->*/
 
-/* section -->       */
-/* endsection -->    */
+/* section      --> Forms*/
+form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: #f3f3f3 solid 1px;
+    border-radius: .5rem;
+}
 
-/* section -->       */
-/* endsection -->    */
+.form_in_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .5rem;
+    width: 85%;
+}
+
+label {
+    font-weight: 700;
+    width: 55%;
+    text-align: left;
+}
+
+input{
+    width: 50%;
+}
+
+form button{
+    width: 8rem;
+    height: 3rem;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #2f2e2b;
+    color: #92DCE5;
+    border: #92DCE5 3px solid;
+    border-radius: 3rem;
+}
+
+form button:hover{
+    color: white;
+    background-color: #92DCE5;
+    border: white 3px solid;
+    transition: all 0.5s ease-in-out;
+    box-shadow: #92DCE5 0 0rem .5rem .5rem;
+}
+
+/* endsection   --> Forms*/
+
+/* section      -->*/
+/* endsection   -->*/

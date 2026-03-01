@@ -7,4 +7,7 @@ class SensorData(BaseModel):
     coolant_pressure : float
     lub_oil_temp     : float
     coolant_temp     : float 
+
+
+class PredictionResponse(BaseModel):
     engine_condition : bool
