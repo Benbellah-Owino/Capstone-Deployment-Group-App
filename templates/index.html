@@ -14,7 +14,7 @@
                     
                 <p/>
 
-                <form action="/predict" method="post" class="features_form">
+                <form class="features_form" id="features_form">
                     <div class="form_in_div">
                         <label for="engine_rpm">Engine RPM</label>
                         <input type="text" name="engine_rpm" id="engine_rpm">
@@ -47,9 +47,11 @@
 
                     <div class="form_in_div">
                         <label for="engine_condition">Engine Condition</label>
-                        <input type="text" name="engine_condition" id="engine_condition">
+                        <p class="engine_condition" id="engine_condition"></p>
                     </div>
                     <button type="submit" class="predict_btn" id="predict_btn">PREDICT</button>
                 </form>
+    <!-- Javascript -->
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
