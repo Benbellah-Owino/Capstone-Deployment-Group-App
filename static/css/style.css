@@ -11,7 +11,7 @@
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
-
+    padding: 0;
 }
 
 .roboto-body {
@@ -23,9 +23,6 @@
         "wdth" 100;
 }
 
-* {
-    padding: .25 rem;
-}
 
 body {
     background-color: #2f2e2b;
@@ -36,9 +33,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding-top: 3rem;
     align-items: center;
+    padding: 0;
+    margin: 0;
+    color:#FF3131
 }
 
+p{
+    padding: 0.5rem;
+}
+
+.warning{
+    color: #F59E0B;
+}
 /* endsection -->   Globals */
 
 /* section      -->*/
@@ -47,6 +55,27 @@ body {
 }
 /* endsection   -->*/
 
+/* section      -->*/
+nav{
+    height: 3rem;
+    width: 100%;
+    position: relative;
+    border-bottom: #FF3131 solid 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .25rem;
+    padding-left: 0.5rem;
+    box-shadow: #c90202 0 0rem .5rem .5rem;
+}
+
+nav .logo{
+    font-size: 2.5rem;
+    color: #FF3131;
+    font-weight: 900;
+}
+/* endsection   -->*/
 /* section      --> Forms*/
 form {
     padding: 1rem;
@@ -54,8 +83,11 @@ form {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: #f3f3f3 solid 1px;
+    border: black solid 1px;
     border-radius: .5rem;
+    box-shadow: #c90202 0 0.5rem .5rem .5rem;
+    color:black;
+    background-color: #FF3131;
 }
 
 .form_in_div {
@@ -75,6 +107,8 @@ label {
 
 input{
     width: 50%;
+    background-color: #2f2e2b;
+    color:#FF3131
 }
 
 form button{
@@ -83,20 +117,17 @@ form button{
     cursor: pointer;
     font-weight: bold;
     background-color: #2f2e2b;
-    color: #92DCE5;
-    border: #92DCE5 3px solid;
+    color: #FF3131;
+    border: #FF3131 3px solid;
     border-radius: 3rem;
 }
 
 form button:hover{
-    color: white;
-    background-color: #92DCE5;
-    border: white 3px solid;
+    color: #2f2e2b;
+    background-color: #F59E0B;
+    border: darkgray 1px solid;
     transition: all 0.5s ease-in-out;
-    box-shadow: #92DCE5 0 0rem .5rem .5rem;
+    box-shadow: #f59f0b93 0 .1rem .3rem .3rem;
 }
 
 /* endsection   --> Forms*/
-
-/* section      -->*/
-/* endsection   -->*/
