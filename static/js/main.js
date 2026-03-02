@@ -1,4 +1,10 @@
-document.getElementById("features_form").addEventListener("submit",async function(e){
+let form = document.getElementById("features_form") ;
+let form_section = document.getElementById("form_section") ;
+let engineCondLabel = document.getElementById("prediction")
+const engCondLabel = document.getElementById("prediction")
+sessionStorage.setItem("prediction_switch", true)
+form.addEventListener("submit",async function(e){
+
     e.preventDefault();
 
     const form_data = new FormData(this);
@@ -25,8 +31,13 @@ document.getElementById("features_form").addEventListener("submit",async functio
 
     const result = await response.json();
     const condition = result.prediction == 1 ? "Healthy" : "Unhealthy"
+    console.log(condition)
+    sessionStorage.setItem("prediction_switch", false);
 
-    const engCondLabel = document.getElementById("engine_condition")
-    engCondLabel.style.color =  result.prediction == 1 ? "green" : "red"
+    engCondLabel.style.color =  result.prediction == 1 ? "#FF3131" : "white";  //"#2f2e2b"
     engCondLabel.textContent = `Engine Condition  ${condition}`
+
+    form_section.style.display = 'none'
+    engCondLabel.style.display = 'block'
+    
 })

@@ -4,44 +4,73 @@
 
 
 /* section -->      Globals */
+
 * {
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
-    /* font-weight: normal; */
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+    font-variation-settings: "wdth" 100;
     padding: 0;
+    margin: 0;          /* ADD THIS — removes default margins everywhere */
+    box-sizing: border-box; /* ADD THIS — prevents padding from adding extra width */
 }
-
-.roboto-body {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
-}
-
 
 body {
     background-color: #2f2e2b;
     color: #f3f3f3;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;  /* CHANGE height to min-height */
+    width: 100%;        /* CHANGE 100vw to 100% — vw ignores scrollbar width causing overflow */
     font-weight: normal;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 3rem;
     align-items: center;
     padding: 0;
     margin: 0;
-    color:#FF3131
+    color: #FF3131;
+    overflow-x: hidden; /* ADD THIS — prevents horizontal scroll */
 }
+
+.background {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;          /* ADD THIS */
+  background-image: url('../images/engine.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
 
 p{
     padding: 0.5rem;
+}
+
+.background {
+  position: relative;
+  min-height: 100vh;
+  
+  /* Background image */
+  background-image: url('../images/engine.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* parallax effect */
+}
+
+/* Tint overlay */
+.background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* black tint — adjust 0.6 for darkness */
+  z-index: 0;
+}
+
+/* Keep content above the tint */
+.background > * {
+  position: relative;
+  z-index: 1;
 }
 
 .warning{
@@ -56,7 +85,7 @@ p{
 /* endsection   -->*/
 
 /* section      -->*/
-nav{
+nav {
     height: 3rem;
     width: 100%;
     position: relative;
@@ -65,11 +94,10 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: .25rem;
-    padding-left: 0.5rem;
+    padding: .25rem .5rem;  /* shorthand — removes any side overflow */
     box-shadow: #c90202 0 0rem .5rem .5rem;
+    box-sizing: border-box; /* ADD THIS */
 }
-
 nav .logo{
     font-size: 2.5rem;
     color: #FF3131;
@@ -129,5 +157,17 @@ form button:hover{
     transition: all 0.5s ease-in-out;
     box-shadow: #f59f0b93 0 .1rem .3rem .3rem;
 }
+
+#form_section{
+    width: 100%;
+    max-width: 800px;
+}
+
+#prediction{
+    display: none;
+    font-size:5rem;
+    font-weight: 900;
+}
+
 
 /* endsection   --> Forms*/
