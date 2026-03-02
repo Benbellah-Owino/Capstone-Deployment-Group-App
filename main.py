@@ -20,14 +20,6 @@ print(model.n_features_in_)
 def read_root():
     return {"message":"Hello World"}
 
-# The following fields will be importamt
-    # engine_rpm       : int
-    # lub_oil_pressure : float
-    # fuel_pressure    : float
-    # coolant_pressure : float
-    # lub_oil_temp     : float
-    # coolant_temp     : float 
-    # engine_condition : bool
 
 @app.get("/home", response_class=HTMLResponse)
 def home(
