@@ -24,6 +24,9 @@ document.getElementById("features_form").addEventListener("submit",async functio
     })
 
     const result = await response.json();
+    const condition = result.prediction == 1 ? "Healthy" : "Unhealthy"
 
-    document.getElementById("engine_condition").innerHTML = "Engine Condition" + result.prediction
+    const engCondLabel = document.getElementById("engine_condition")
+    engCondLabel.style.color =  result.prediction == 1 ? "green" : "red"
+    engCondLabel.textContent = `Engine Condition  ${condition}`
 })

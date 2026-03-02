@@ -52,7 +52,7 @@ def home(data = SensorData):
     return templates.TemplateResponse("index.html", {"Data": data})
 
 
-@app.post("/predict", response_class=HTMLResponse)
+@app.post("/predict")
 def predict(
     request: Request,
     # engine_rpm       : int = Form(...),
@@ -91,9 +91,14 @@ def predict(
         oil_pressXtemp
     ]])
 
-    prediction = model.predict(features)
-
+    prediction = model.predict(features)[0]
+    type(prediction)
     print(f"Prediction is: {prediction}")
 
-     
+    return {
+        "prediction": int(prediction)
+    }
+
+
+def prediction(request: Request):
     return templates.TemplateResponse("prediction.html", {"request": request,"prediction": prediction})
